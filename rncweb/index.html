@@ -9,24 +9,28 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
   </head>
   <body>
-    <header>
+    <header id="main-content">
       <nav class="navbar">
-        <img src="public/imagenes/logo0.png" alt="Logo menú" class="menu-icon"/>
-        <ul class="nav-links">
-          <li><a href="#">INICIO</a></li>
-          <li><a href="#">QUIENES SOMOS</a></li>
+        <img src="public/imagenes/logo0.png" alt="Logo menú" class="menu-icon" />
+              <div class="hamburger" id="hamburger">
+          ☰
+        </div>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#main-content">INICIO</a></li>
+          <li><a href="#quienes-somos">QUIENES SOMOS</a></li>
           <li><a href="#">IDEOLOGÍA</a></li>
           <li><a href="#">TIENDA</a></li>
           <li><a href="#">FORO</a></li>
           <li><a href="#">DONACIONES</a></li>
         </ul>
       </nav>
+      
     </header>
-    <div class="main-content">
+    <div class="main-content" >
       <img src="public/imagenes/logo.png" alt="Logo central" class="center-logo"/>
       <img src="public/imagenes/estatua.png" alt="Estatua" class="statue"/>
     </div>
-    <div class="quienes-somos">
+    <div class="quienes-somos" id="quienes-somos" >
       <h1 class="tituloqns">¿QUIENES SOMOS?</h1>
       <div class="section-1">
         <img class="img1" src="public/imagenes/1.jpg" alt="Imagen izquierda">
@@ -52,6 +56,9 @@
         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br>
         Ut enim ad minim veniam, quis nostrud exercitation.
       </p>
+    </div>
+    <div class="tienda" id="tienda">
+
     </div>
 
     <script type="module" src="/src/main.tsx"></script>

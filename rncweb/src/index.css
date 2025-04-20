@@ -4,7 +4,10 @@
   box-sizing: border-box;
   font-family: "Cinzel", serif;
 }
-
+html, body {
+  touch-action: manipulation;
+  overscroll-behavior: none;
+}
 body {
   background-color: #000;
   color: white;
@@ -17,6 +20,15 @@ body {
 
 header {
   padding: 30px 0;
+}
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgb(0, 0, 0); /* o el color de fondo que quieras */
+  z-index: 1000; /* para que se mantenga por encima de los demás elementos */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* opcional, para un efecto de sombra */
 }
 
 .navbar {
@@ -63,7 +75,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 60px 20px;
+  padding: 10% 20px;
 }
 
 .center-logo {
@@ -75,14 +87,6 @@ header {
   z-index: 1;
 }
 
-.statue {
-  position: relative;
-  width: 35vw;
-  min-width: 220px;
-  max-width: 380px;
-  height: auto;
-  z-index: 2;
-}
 .center-logo {
   position: absolute;
   top: 26%;
@@ -122,12 +126,12 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 30px;
   flex-wrap: wrap;
+  gap: 30px;
 }
 
 .img1, .img2 {
-  width: 380px;
+  width: 350px;
   border-radius: 20px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
 }
@@ -142,11 +146,10 @@ header {
 }
 
 .texto-qns {
-  max-width: 300px;
-  line-height: 1.6;
+  max-width: 367px;
+  line-height: 1.5;
   font-size: 23px;
   text-align: justify;
-  margin: 0 auto;
 }
 
 .section-2{
@@ -164,7 +167,60 @@ header {
 }
 .texto-qns2{
   font-size: 23px;
+  max-width: 450px;
+  text-align: center;
 }
+
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+/* Botón hamburguesa oculto en pantallas grandes */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 60px; /* ajusta según el alto de la navbar */
+    right: 0;
+    background-color: white;
+    flex-direction: column;
+    width: 200px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links li {
+    padding: 10px 20px;
+  }
+}
+
+.main-content {
+  margin-top: 80px;
+}
+
 @keyframes slideInLogo {
   from {
     transform: translateY(-200%) scale(1.2);
@@ -195,7 +251,7 @@ header {
   }
 
   .img1, .img2 {
-    width: 60%;
+    width: 50%;
     transform: none;
   }
 
