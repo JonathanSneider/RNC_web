@@ -4,10 +4,12 @@
   box-sizing: border-box;
   font-family: "Cinzel", serif;
 }
+
 html, body {
   touch-action: manipulation;
   overscroll-behavior: none;
 }
+
 body {
   background-color: #000;
   color: white;
@@ -18,30 +20,68 @@ body {
   overflow-x: hidden;
 }
 
+body.menu-open {
+  overflow: hidden;
+}
+
 header {
   padding: 30px 0;
 }
+
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: rgb(0, 0, 0); /* o el color de fondo que quieras */
-  z-index: 1000; /* para que se mantenga por encima de los demás elementos */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* opcional, para un efecto de sombra */
-}
-
-.navbar {
+  background-color: rgb(0, 0, 0);
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 40px;
-  flex-wrap: wrap;
+  padding: 15px 20px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
 }
 
 .menu-icon {
   width: 100px;
   height: auto;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 25px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001;
+}
+
+.hamburger span {
+  width: 100%;
+  height: 3px;
+  background: white;
+  transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
 }
 
 .nav-links {
@@ -76,15 +116,7 @@ header {
   align-items: center;
   justify-content: center;
   padding: 10% 20px;
-}
-
-.center-logo {
-  position: absolute;
-  top: 26%;
-  transform: translateY(-50%);
-  width: 23vw;
-  height: auto;
-  z-index: 1;
+  margin-top: 80px;
 }
 
 .center-logo {
@@ -109,7 +141,7 @@ header {
 
 .quienes-somos {
   padding: 60px 40px;
-  background: url('public/imagenes/space-bg.jpg'); /* opcional si usás una imagen de fondo */
+  background: url('public/imagenes/space-bg.jpg');
   background-size: cover;
   background-position: center;
   color: white;
@@ -136,9 +168,8 @@ header {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
 }
 
-
 .img1 {
-  transform: rotate(-9deg);
+  transform: rotate(-12deg);
 }
 
 .img2 {
@@ -148,11 +179,12 @@ header {
 .texto-qns {
   max-width: 367px;
   line-height: 1.5;
-  font-size: 23px;
-  text-align: justify;
+  text-align: center;
+  font-size: 19px;
+  line-height: 1.8;
 }
 
-.section-2{
+.section-2 {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -160,65 +192,280 @@ header {
   flex-wrap: wrap;
 }
 
-.img3{
+.img3 {
   width: 380px;
   border-radius: 20px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
 }
-.texto-qns2{
-  font-size: 23px;
+
+.texto-qns2 {
   max-width: 450px;
+  text-align: center;
+  font-size: 19px;
+  line-height: 1.8;
+}
+
+.ideologia-section {
+  background: url('public/imagenes/fondo-estrellas.jpg');
+  background-size: cover;
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+  font-family: 'Cinzel', serif;
+}
+
+.ideologia-titulo {
+  font-size: 20px;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+  color: #ccc;
+}
+
+.ideologia-subtitulo {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.ideologia-texto {
+  max-width: 800px;
+  margin: 0 auto 20px;
+  font-size: 19px;
+  line-height: 1.8;
+}
+
+.tienda-section {
+  background-color: #2c2c2c;
+  padding: 40px 20px;
+  text-align: center;
+  font-family: 'Cinzel', serif;
+}
+
+.tienda-titulo {
+  font-size: 28px;
+  color: white;
+  margin-bottom: 30px;
+}
+
+.productos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin: 0 auto;
+}
+
+.producto {
+  background-color: #3e3e3e;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+  transition: transform 0.2s;
+  width: 250px;
+  margin: 0 auto;
+}
+
+.producto:hover {
+  transform: scale(1.03);
+}
+
+.producto img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.precio {
+  margin-top: 10px;
+  font-size: 16px;
+  background-color: #5c4433;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.mensaje-tienda {
+  margin-top: 40px;
+  font-size: 16px;
+  color: white;
+  background-color: black;
+  padding: 20px;
+  border-radius: 0 0 10px 10px;
+}
+.articulos-section {
+  background-color: #000;
+  color: #fff;
+  padding: 50px 20px;
   text-align: center;
 }
 
+.articulos-titulo {
+  font-family: 'Cinzel', serif;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+.producto:hover {
+  transform: scale(1.03);
+}
 
-.nav-links {
+.articulos-grid {
   display: flex;
-  gap: 20px;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.articulo {
+  background-color: #f1f1f1;
+  color: #000;
+  border-radius: 20px;
+  width: 300px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  transition: transform 0.3s;
+}
+
+.articulo:hover {
+  transform: translateY(-10px);
+}
+
+.articulo-img {
+  width: 100%;
+  border-radius: 15px;
+  margin-bottom: 15px;
+  max-width: 200px;
+}
+
+.articulo-subtitulo {
+  font-family: 'Cinzel', serif;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.articulo-texto {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+/* Donaciones Section */
+.donaciones-section {
+  background-color: #000;
+  color: #fff;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.donaciones-titulo {
+  font-family: 'Cinzel', serif;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+.donaciones-contenido {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.donaciones-medios {
+  background-color: #f1f1f1;
+  color: #000;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.donacion-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.donacion-icono {
+  width: 40px;
+  margin-right: 10px;
+}
+
+.donaciones-texto {
+  max-width: 400px;
+  font-family: 'Cinzel', serif;
+  line-height: 1.6;
+}
+
+/* Footer Section */
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 30px 20px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.footer-logo img {
+  width: 60px;
+  margin-bottom: 15px;
+}
+
+.footer-section {
+  margin: 10px 20px;
+}
+
+.footer-section h4 {
+  font-family: 'Cinzel', serif;
+  margin-bottom: 10px;
+}
+
+.footer-section ul {
   list-style: none;
+  padding: 0;
 }
 
-.nav-links li a {
+.footer-section li {
+  margin-bottom: 5px;
+}
+.footer-section ul li a {
+  color: #fff;
   text-decoration: none;
-  color: black;
-  font-weight: bold;
+  transition: color 0.3s ease;
 }
 
-/* Botón hamburguesa oculto en pantallas grandes */
-.hamburger {
-  display: none;
-  font-size: 28px;
-  cursor: pointer;
+.footer-section ul li a:hover {
+  color: #ccc;
 }
 
-/* Responsive */
+/* Responsive adjustments */
 @media (max-width: 768px) {
-  .hamburger {
-    display: block;
-  }
-
-  .nav-links {
-    display: none;
-    position: absolute;
-    top: 60px; /* ajusta según el alto de la navbar */
-    right: 0;
-    background-color: white;
+  .donaciones-contenido {
     flex-direction: column;
-    width: 200px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    align-items: center;
   }
 
-  .nav-links.open {
-    display: flex;
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 
-  .nav-links li {
-    padding: 10px 20px;
+  .footer-section {
+    margin: 10px 0;
   }
 }
 
-.main-content {
-  margin-top: 80px;
+@media (max-width: 768px) {
+  .articulos-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .articulo {
+    width: 90%;
+  }
 }
 
 @keyframes slideInLogo {
@@ -243,62 +490,172 @@ header {
   }
 }
 
-/* Responsive para móviles */
-@media (max-width: 1200px) {
-  .section-1 {
-    flex-direction: column;
-    align-items: center;
+/* Nuevas animaciones para scroll */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
   }
-
-  .img1, .img2 {
-    width: 50%;
-    transform: none;
-  }
-
-  .texto-qns {
-    text-align: center;
-    font-size: 16px;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(7);
+  }
+}
 
-@media (max-width: 768px) {
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-6);
+  }
+}
+
+.section-animate {
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+.animate-fadeInLeft {
+  animation: fadeInLeft 1s ease-out forwards;
+}
+
+.animate-fadeInRight {
+  animation: fadeInRight 1s ease-out forwards;
+}
+
+.delay-100 {
+  animation-delay: 0.1s;
+}
+
+.delay-200 {
+  animation-delay: 0.2s;
+}
+
+.delay-300 {
+  animation-delay: 0.3s;
+}
+
+.delay-400 {
+  animation-delay: 0.4s;
+}
+
+.delay-500 {
+  animation-delay: 0.5s;
+}
+
+/* Responsive para tablets */
+@media (max-width: 1024px) {
   .navbar {
+    justify-content: space-between;
+  }
+  
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    max-width: 300px;
+    height: 100vh;
+    background-color: #000;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 20px;
+    transition: right 0.3s ease;
+    z-index: 1000;
+    border-radius: 0;
+  }
+  
+  .nav-links.active {
+    right: 0;
+  }
+  
+  .nav-links li a {
+    color: white !important;
+    font-size: 18px !important;
+    padding: 15px 0 !important;
+    display: block;
+    width: 100%;
+    text-align: center;
+    background: transparent !important;
+  }
+  
+  .hamburger {
+    display: flex;
+  }
+  
+  .productos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+  .center-logo {
+    width: 40vw;
+    top: 20%;
+  }
+  
+  .statue {
+    width: 70vw;
+  }
+  
+  .section-1, .section-2 {
     flex-direction: column;
     gap: 20px;
   }
-
-  .menu-icon {
-    margin-right: 0;
-    width: 50px;
+  
+  .img1, .img2, .img3 {
+    width: 80%;
+    transform: none !important;
   }
-
-  .nav-links {
-    padding: 12px 25px;
-    gap: 12px;
-    border-radius: 20px;
-  }
-
-  .nav-links li a {
+  
+  .texto-qns, .texto-qns2 {
+    max-width: 90%;
     font-size: 16px;
-    padding: 8px 12px;
   }
-
-  .center-logo {
-    width: 22vw;
+  
+  .productos-grid {
+    grid-template-columns: 1fr;
   }
-
-  .statue {
-    width: 48vw;
+  
+  .producto {
+    width: 80%;
+  }
+  
+  .nav-links {
+    width: 80%;
   }
 }
 
 @media (max-width: 480px) {
   .center-logo {
-    width: 30vw;
+    width: 50vw;
   }
-
+  
   .statue {
-    width: 60vw;
+    width: 80vw;
+  }
+  
+  .menu-icon {
+    width: 80px;
   }
 }

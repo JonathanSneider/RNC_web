@@ -1,66 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Resurgimiento nacional</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
-  </head>
-  <body>
-    <header id="main-content">
-      <nav class="navbar">
-        <img src="public/imagenes/logo0.png" alt="Logo menú" class="menu-icon" />
-              <div class="hamburger" id="hamburger">
-          ☰
-        </div>
-        <ul class="nav-links" id="nav-links">
-          <li><a href="#main-content">INICIO</a></li>
-          <li><a href="#quienes-somos">QUIENES SOMOS</a></li>
-          <li><a href="#">IDEOLOGÍA</a></li>
-          <li><a href="#">TIENDA</a></li>
-          <li><a href="#">FORO</a></li>
-          <li><a href="#">DONACIONES</a></li>
-        </ul>
-      </nav>
-      
-    </header>
-    <div class="main-content" >
-      <img src="public/imagenes/logo.png" alt="Logo central" class="center-logo"/>
-      <img src="public/imagenes/estatua.png" alt="Estatua" class="statue"/>
-    </div>
-    <div class="quienes-somos" id="quienes-somos" >
-      <h1 class="tituloqns">¿QUIENES SOMOS?</h1>
-      <div class="section-1">
-        <img class="img1" src="public/imagenes/1.jpg" alt="Imagen izquierda">
-        
-        <p class="texto-qns">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit,<br>
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br>
-          Ut enim ad minim veniam, quis nostrud exercitation.Lorem ipsum dolor<br>
-           sit amet, consectetur adipiscing elit,<br>
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br>
-          Ut enim ad minim veniam, quis nostrud exercitation.
-        </p>
-        <img class="img2" src="public/imagenes/2.jpg" alt="Imagen derecha">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resurgimiento nacional</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="src/index.css">
+</head>
+<body>
+  <header id="main-content">
+    <nav class="navbar">
+      <div class="logo-container">
+        <img src="public/imagenes/logo0.png" alt="Logo menú" class="menu-icon">
       </div>
-    </div>
-    <div class="section-2">
-      <img class="img3" src="public/imagenes/4.jpg" alt="">
-      <p class="texto-qns2">
+      <button class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#main-content">INICIO</a></li>
+        <li><a href="#quienes-somos">QUIENES SOMOS</a></li>
+        <li><a href="#ideologia">IDEOLOGÍA</a></li>
+        <li><a href="#tienda">TIENDA</a></li>
+        <li><a href="#articulos">FORO</a></li>
+        <li><a href="#donaciones">DONACIONES</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="main-content">
+    <img src="public/imagenes/logo.png" alt="Logo central" class="center-logo"/>
+    <img src="public/imagenes/estatua.png" alt="Estatua" class="statue"/>
+  </div>
+
+  <div class="quienes-somos section-animate" id="quienes-somos" data-animation="animate-fadeInUp">
+    <h1 class="tituloqns">¿QUIENES SOMOS?</h1>
+    <div class="section-1">
+      <img class="img1 section-animate" src="public/imagenes/1.jpg" alt="Imagen izquierda" data-animation="animate-fadeInLeft" data-delay="100">
+      <p class="texto-qns section-animate" data-animation="animate-fadeInUp" data-delay="200">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit,<br>
         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br>
         Ut enim ad minim veniam, quis nostrud exercitation.Lorem ipsum dolor<br>
-         sit amet, consectetur adipiscing elit,<br>
+        sit amet, consectetur adipiscing elit,<br>
         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br>
         Ut enim ad minim veniam, quis nostrud exercitation.
       </p>
+      <img class="img2 section-animate" src="public/imagenes/2.jpg" alt="Imagen derecha" data-animation="animate-fadeInRight" data-delay="100">
     </div>
-    <div class="tienda" id="tienda">
+  </div>
 
+  <div class="section-2">
+    <img class="img3 section-animate" src="public/imagenes/4.jpg" alt="" data-animation="animate-fadeInLeft" data-delay="100">
+    <p class="texto-qns2 section-animate" data-animation="animate-fadeInUp" data-delay="200">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit,<br>
+      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br>
+      Ut enim ad minim veniam, quis nostrud exercitation.Lorem ipsum dolor<br>
+      sit amet, consectetur adipiscing elit,<br>
+      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br>
+      Ut enim ad minim veniam, quis nostrud exercitation.
+    </p>
+  </div>
+
+  <div class="ideologia-section section-animate" id="ideologia" data-animation="animate-fadeInUp">
+    <h2 class="ideologia-titulo">IDEOLOGÍA</h2>
+    <h3 class="ideologia-subtitulo">¿En qué creemos?</h3>
+    <p class="ideologia-texto section-animate" data-animation="animate-fadeInUp" data-delay="100">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
+      labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+      laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
+      voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
+      non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+    <p class="ideologia-texto section-animate" data-animation="animate-fadeInUp" data-delay="200">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
+      labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+      laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
+      voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+    </p>
+    <p class="ideologia-texto section-animate" data-animation="animate-fadeInUp" data-delay="300">
+      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim 
+      id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+      incididunt ut labore et dolore magna aliqua.
+    </p>
+  </div>
+
+  <div class="tienda-section section-animate" id="tienda" data-animation="animate-fadeInUp">
+    <h2 class="tienda-titulo">TIENDA</h2>
+    <div class="productos-grid">
+      <div class="producto" data-animation="animate-fadeInUp" data-delay="100"><img src="public/imagenes/camiseta.png" alt="camiseta" /><p class="precio">60.000$</p></div>
+      <div class="producto" data-animation="animate-fadeInUp" data-delay="200"><img src="public/imagenes/camiseta.png" alt="camiseta" /><p class="precio">60.000$</p></div>
+      <div class="producto" data-animation="animate-fadeInUp" data-delay="300"><img src="public/imagenes/camiseta.png" alt="camiseta" /><p class="precio">60.000$</p></div>
+      <div class="producto" data-animation="animate-fadeInUp" data-delay="100"><img src="public/imagenes/camiseta.png" alt="camiseta" /><p class="precio">60.000$</p></div>
+      <div class="producto" data-animation="animate-fadeInUp" data-delay="200"><img src="public/imagenes/camiseta.png" alt="camiseta" /><p class="precio">60.000$</p></div>
+      <div class="producto" data-animation="animate-fadeInUp" data-delay="300"><img src="public/imagenes/camiseta.png" alt="camiseta" /><p class="precio">60.000$</p></div>
     </div>
-
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+    <div class="mensaje-tienda section-animate" data-animation="animate-fadeInUp" data-delay="400">
+      Estamos trabajando para traer más diseños y productos!
+    </div>
+  </div>
+  <div class="articulos-section" id="articulos">
+    <h2 class="articulos-titulo">Artículos y Noticias</h2>
+    <div class="articulos-grid">
+      <div class="articulo">
+        <img src="public/imagenes/patria.jpg" alt="Morir por la patria" class="articulo-img">
+        <p class="articulo-texto">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </p>
+      </div>
+      <div class="articulo">
+        <img src="public/imagenes/retorno.jpg" alt="No hay retorno" class="articulo-img">
+        <p class="articulo-texto">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </p>
+      </div>
+      <div class="articulo">
+        <img src="public/imagenes/resurmiento.jpg" alt="Colombia nos une" class="articulo-img">
+        <p class="articulo-texto">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="donaciones-section" id="donaciones">
+    <h2 class="donaciones-titulo">Donaciones</h2>
+    <div class="donaciones-contenido">
+      <div class="donaciones-medios">
+        <div class="donacion-item">
+          <img src="public/imagenes/Paypal_2014_logo (1).png" alt="PayPal" class="donacion-icono">
+          <span>asdasdad@gmail.com</span>
+        </div>
+        <div class="donacion-item">
+          <img src="public/imagenes/nequi-logo-png_seeklogo-404357.png" alt="Nequi" class="donacion-icono">
+          <span>231231231231</span>
+        </div>
+      </div>
+      <p class="donaciones-texto">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.
+      </p>
+    </div>
+  </div>
+  
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <img src="public/imagenes/logo.png" alt="Logo Footer">
+      </div>
+      <div class="footer-section">
+        <h4>Redes:</h4>
+        <ul>
+          <li><a href="https://t.me/FiltroNacional" target="_blank">Telegram</a></li>
+          <li><a href="https://x.com/RNC34392" target="_blank">X</a></li>
+          <li><a href="https://www.tiktok.com/@resurgimientonacionalc" target="_blank">Tiktok</a></li>
+          <li><a href="https://www.whatsapp.com/channel/0029Vb6aa4yBqbrGYib1lN2G" target="_blank">Whatsapp</a></li>
+          <li><a href="https://www.instagram.com/Resurgimiento.nacional" target="_blank">Instagram</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Menus:</h4>
+        <ul>
+          <li><a href="#main-content">Inicio</a></li>
+          <li><a href="#quienes-somos">Quienes Somos</a></li>
+          <li><a href="#ideologia">Ideologia</a></li>
+          <li><a href="#tienda">Tienda</a></li>
+          <li><a href="#articulos">Foro</a></li>
+          <li><a href="#donaciones">Donaciones</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Contáctenos:</h4>
+        <p>Resurgimientonacional@gmail.com</p>
+      </div>
+    </div>
+  </footer>
+  
+  <script src="src/script.js"></script>
+</body>
 </html>
