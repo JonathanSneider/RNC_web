@@ -41,7 +41,6 @@ template.innerHTML = `
       color: #ccc;
     }
 
-    /* Responsive */
     @media (max-width: 768px) {
       .footer-content {
         flex-direction: column;

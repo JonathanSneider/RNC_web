@@ -1,159 +1,154 @@
-const template = document.createElement('template');
-template.innerHTML = `
-  <style>
-    :host {
-      display: block;
-      font-family: 'Cinzel', serif;
-      color: #111;
-      padding: 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
+import { productos } from './productos.js';
 
+const templateProducto = document.createElement('template');
+templateProducto.innerHTML = `
+  <style>
+    .wrapper {
+      padding: 40px;
+      background-color: #1e1e1e;
+      color: white;
+      font-family: 'Cinzel', serif;
+      display: flex;
+      justify-content: center;
+    }
     .container {
       display: flex;
-      flex-direction: row;
-      gap: 30px;
-      align-items: flex-start;
+      gap: 40px;
+      max-width: 1000px;
+      flex-wrap: wrap;
     }
-
     .image-section {
       flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
     }
-
     .image-wrapper {
       position: relative;
-      width: 350px;
     }
-
     .main-image {
       width: 100%;
+      max-width: 400px;
       border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
     }
-
     .arrow {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      font-size: 30px;
-      color: #caa25b;
-      background: rgba(255, 255, 255, 0.7);
-      border-radius: 50%;
+      font-size: 24px;
       cursor: pointer;
-      padding: 5px 10px;
+      color: #fff;
+      background-color: rgba(0,0,0,0.4);
+      padding: 10px;
+      border-radius: 50%;
       user-select: none;
-      z-index: 2;
     }
-
     .arrow.left {
       left: -20px;
     }
-
     .arrow.right {
       right: -20px;
     }
-
     .thumbnails {
       display: flex;
-      justify-content: center;
       gap: 10px;
-      margin: 15px 0;
+      margin-top: 10px;
     }
-
     .thumbnails img {
       width: 60px;
-      border-radius: 6px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 5px;
       cursor: pointer;
-      border: 2px solid transparent;
-    }
-
-    .thumbnails img:hover {
-      border-color: #caa25b;
     }
 
     .details-section {
       flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      text-align: left;
+      max-width: 500px;
     }
-
     .product-title {
-      font-size: 28px;
-      font-weight: bold;
-      color: #caa25b;
-      margin-bottom: 5px;
+      font-size: 32px;
+      margin-bottom: 10px;
     }
-
     .product-category {
-      font-size: 14px;
-      margin-bottom: 20px;
-      color: #777;
-    }
-
-    .description {
-      border: 1px solid #000;
-      padding: 20px;
-      margin: 20px 0;
       font-style: italic;
-      line-height: 1.6;
-      background: #fffef9;
-    }
-
-    .price {
-      font-size: 22px;
-      font-weight: bold;
       margin-bottom: 20px;
     }
-
-    .buy-button {
-      background-color: #caa25b;
-      color: #000;
-      padding: 12px 25px;
-      border: none;
-      border-radius: 12px;
-      font-family: 'Cinzel', serif;
-      font-size: 16px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    .description {
+      margin-bottom: 20px;
     }
+    .sizes {
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+    .sizes .size-options {
+        margin-top: 10px; 
+      } 
+    .size-button {
+      margin-right: 10px;
+      padding: 6px 12px;
+      background-color: #5c4433;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .details-section{
+    display:flex;
+    flex-direction:column;
+    }
+    .price {
+      font-size: 24px;
+      margin-bottom: 20px;
+      display: inline-block;
+      background-color: #5c4433;
+      padding: 6px 12px;
+      border-radius: 5px;
+      max-width:100px;
+    }
+    .buy-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #8b5e3c;
+      color: white;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s;
+      max-width:150px;
 
+    }
     .buy-button:hover {
-      background-color: #a9863a;
+      background-color: #a06d49;
     }
   </style>
 
-  <div class="container">
-    <div class="image-section">
-      <div class="image-wrapper">
-        <div class="arrow left">&#9664;</div>
-        <img class="main-image" src="public/imagenes/camiseta.png" alt="Producto" />
-        <div class="arrow right">&#9654;</div>
-      </div>
-      <div class="thumbnails">
-        <img src="public/imagenes/camiseta.png" alt="Mini 1" />
-        <img src="public/imagenes/camiseta.png" alt="Mini 2" />
-        <img src="public/imagenes/1.jpg" alt="Mini 3" />
-      </div>
-    </div>
-    <div class="details-section">
-      <h1 class="product-title">RNC CAMISETA</h1>
-      <p class="product-category">Categoría: Ropa</p>
-
-      <div class="description">
-        <p><strong>Camiseta RNC</strong></p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+  <div class="wrapper">
+    <div class="container">
+      <div class="image-section">
+        <div class="image-wrapper">
+          <div class="arrow left">&#9664;</div>
+          <img class="main-image" />
+          <div class="arrow right">&#9654;</div>
+        </div>
+        <div class="thumbnails"></div>
       </div>
 
-      <div class="price">$60.000</div>
-      <button class="buy-button">Comprar</button>
+      <div class="details-section">
+        <h1 class="product-title"></h1>
+        <p class="product-category"></p>
+        <div class="description"></div>
+
+        <div class="sizes">
+          <label>Tallas disponibles:</label>
+          <div class="size-options">
+            <button class="size-button">S</button>
+            <button class="size-button">M</button>
+            <button class="size-button">L</button>
+            <button class="size-button">XL</button>
+          </div>
+        </div>
+
+        <div class="price"></div>
+        <a class="buy-button" target="_blank" rel="noopener noreferrer">Comprar</a>
+      </div>
     </div>
   </div>
 `;
@@ -161,35 +156,56 @@ template.innerHTML = `
 class ProductoDetalle extends HTMLElement {
   constructor() {
     super();
-    this.attachShadow({ mode: 'open' }).appendChild(template.content.cloneNode(true));
-    this.currentIndex = 0;
-    this.images = [];
+    this.attachShadow({ mode: 'open' });
+    this.shadowRoot.appendChild(templateProducto.content.cloneNode(true));
   }
 
   connectedCallback() {
-    const mainImage = this.shadowRoot.querySelector('.main-image');
-    const thumbnails = this.shadowRoot.querySelectorAll('.thumbnails img');
-    const leftArrow = this.shadowRoot.querySelector('.arrow.left');
-    const rightArrow = this.shadowRoot.querySelector('.arrow.right');
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id');
+    const data = productos[id];
 
-    this.images = Array.from(thumbnails).map(img => img.src);
-    mainImage.src = this.images[this.currentIndex];
+    if (!data) {
+      this.shadowRoot.innerHTML = `<p style="padding: 50px; text-align: center;">Producto no encontrado.</p>`;
+      return;
+    }
 
-    thumbnails.forEach((thumb, index) => {
-      thumb.addEventListener('click', () => {
-        this.currentIndex = index;
-        mainImage.src = this.images[this.currentIndex];
+    const root = this.shadowRoot;
+    root.querySelector('.product-title').textContent = data.titulo;
+    root.querySelector('.product-category').textContent = `Categoría: ${data.categoria}`;
+    root.querySelector('.description').innerHTML = data.descripcion;
+    root.querySelector('.price').textContent = data.precio;
+    root.querySelector('.buy-button').href = data.telegram;
+
+    const mainImage = root.querySelector('.main-image');
+    const thumbnails = root.querySelector('.thumbnails');
+    let currentIndex = 0;
+
+    const updateMainImage = (index) => {
+      mainImage.src = data.imagenes[index];
+    };
+
+    updateMainImage(currentIndex);
+
+    root.querySelector('.arrow.left').addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + data.imagenes.length) % data.imagenes.length;
+      updateMainImage(currentIndex);
+    });
+
+    root.querySelector('.arrow.right').addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % data.imagenes.length;
+      updateMainImage(currentIndex);
+    });
+
+    thumbnails.innerHTML = '';
+    data.imagenes.forEach((src, index) => {
+      const img = document.createElement('img');
+      img.src = src;
+      img.addEventListener('click', () => {
+        currentIndex = index;
+        updateMainImage(index);
       });
-    });
-
-    leftArrow.addEventListener('click', () => {
-      this.currentIndex = (this.currentIndex - 1 + this.images.length) % this.images.length;
-      mainImage.src = this.images[this.currentIndex];
-    });
-
-    rightArrow.addEventListener('click', () => {
-      this.currentIndex = (this.currentIndex + 1) % this.images.length;
-      mainImage.src = this.images[this.currentIndex];
+      thumbnails.appendChild(img);
     });
   }
 }

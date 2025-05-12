@@ -14,7 +14,7 @@ template.innerHTML = `
       top: 0;
       right: 12px;
       width: 100%;
-      background-color: rgb(0, 0, 0);
+      
       z-index: 1000;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       display: flex;
@@ -150,12 +150,12 @@ template.innerHTML = `
         <span></span>
       </button>
       <ul class="nav-links" id="nav-links" role="menu">
-        <li><a href="#main-content" role="menuitem">INICIO</a></li>
-        <li><a href="#quienes-somos" role="menuitem">QUIENES SOMOS</a></li>
-        <li><a href="#ideologia" role="menuitem">IDEOLOGÍA</a></li>
-        <li><a href="#tienda" role="menuitem">TIENDA</a></li>
-        <li><a href="#articulos" role="menuitem">FORO</a></li>
-        <li><a href="#donaciones" role="menuitem">DONACIONES</a></li>
+        <li><a href="index.html#main-content" role="menuitem">INICIO</a></li>
+        <li><a href="index.html#quienes-somos" role="menuitem">QUIENES SOMOS</a></li>
+        <li><a href="index.html#ideologia" role="menuitem">IDEOLOGÍA</a></li>
+        <li><a href="index.html#tienda" role="menuitem">TIENDA</a></li>
+        <li><a href="index.html#articulos" role="menuitem">FORO</a></li>
+        <li><a href="index.html#donaciones" role="menuitem">DONACIONES</a></li>
       </ul>
     </nav>
   </header>
