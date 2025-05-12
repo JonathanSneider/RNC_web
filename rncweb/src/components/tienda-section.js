@@ -6,69 +6,104 @@ template.innerHTML = `
     :host {
       display: block;
       background-color: #2c2c2c;
-      padding: 40px 20px;
+      padding: clamp(20px, 5vw, 40px) clamp(10px, 3vw, 20px);
       text-align: center;
       font-family: 'Cinzel', serif;
       color: white;
     }
 
     .tienda-titulo {
-      font-size: 28px;
-      margin-bottom: 30px;
+      font-size: clamp(1.5rem, 6vw, 2.2rem);
+      margin-bottom: clamp(20px, 4vw, 30px);
       color: white;
-      padding-top: 40px;
+      padding-top: clamp(20px, 4vw, 40px);
+      letter-spacing: 1px;
     }
 
     .productos-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(250px, 1fr));
-      gap: 30px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(60px, 3vw, 30px);
       margin: 0 auto;
       justify-content: center;
       max-width: 1000px;
+      padding: 0 10px;
+      
     }
 
     .producto-link {
       text-decoration: none;
       color: inherit;
+      display: block;
+      height: 100%;
     }
 
     .producto {
       background-color: #3e3e3e;
-      padding: 15px;
+      padding: clamp(10px, 2vw, 15px);
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.4);
-      transition: transform 0.2s;
+      transition: all 0.3s ease;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      
     }
 
     .producto:hover {
-      transform: scale(1.03);
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.6);
     }
 
     .producto img {
       width: 100%;
-      height: 250px;
+      height: clamp(200px, 30vw, 250px);
       object-fit: cover;
       border-radius: 5px;
+      margin-bottom: 10px;
     }
 
     .precio {
-      margin-top: 10px;
-      font-size: 16px;
+      margin-top: auto;
+      font-size: clamp(14px, 2vw, 16px);
       background-color: #5c4433;
       color: white;
       padding: 6px 10px;
       border-radius: 5px;
       display: inline-block;
+      margin-bottom: 5px;
     }
 
     .mensaje-tienda {
-      margin-top: 40px;
-      font-size: 16px;
+      margin-top: clamp(20px, 5vw, 40px);
+      font-size: clamp(14px, 2vw, 16px);
       background-color: #5c4433;
-      padding: 20px;
+      padding: clamp(15px, 3vw, 20px);
       border-radius: 0 0 10px 10px;
       color: white;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @media (max-width: 900px) {
+      .productos-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .productos-grid {
+        grid-template-columns: 1fr;
+        justify-items: center; /* Centra los elementos del grid */
+        max-width: 300px; /* Ancho máximo para móvil */
+        row-gap: 30px;
+      }
+      
+      .producto {
+        max-width: 250px; /* Ancho fijo para móvil */
+        width: 100%; /* Ocupa todo el espacio disponible */
+      }
     }
   </style>
 
@@ -101,7 +136,7 @@ class TiendaSection extends HTMLElement {
       const productoHTML = `
         <a href="producto.html?id=${id}" class="producto-link">
           <div class="producto">
-            <img src="${producto.imagenes[0]}" alt="${producto.titulo}" />
+            <img src="${producto.imagenes[0]}" alt="${producto.titulo}" loading="lazy" />
             <p class="precio">${producto.precio}</p>
           </div>
         </a>

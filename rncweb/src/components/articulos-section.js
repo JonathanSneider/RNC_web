@@ -1,3 +1,5 @@
+import { articulos } from './articulos.js';
+
 const template = document.createElement('template');
 template.innerHTML = `
   <style>
@@ -13,7 +15,6 @@ template.innerHTML = `
       font-size: 2.5rem;
       margin-bottom: 40px;
       margin-top: 84px;
-
     }
     .articulos-grid {
       display: flex;
@@ -29,6 +30,7 @@ template.innerHTML = `
       padding: 20px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.5);
       transition: transform 0.3s;
+      cursor: pointer;
     }
     .articulo:hover {
       transform: translateY(-10px);
@@ -43,50 +45,46 @@ template.innerHTML = `
       font-size: 0.9rem;
       line-height: 1.5;
     }
-    /* Responsive */
+
     @media (max-width: 768px) {
-      .articulos-grid {
+      .productos-grid {
         flex-direction: column;
         align-items: center;
       }
       .articulo {
-        width: 90%;
-      }
-      .articulo{
-      width: 260px;
+        width: 260px;
       }
     }
-      
   </style>
   <section id="articulos">
     <h2 class="articulos-titulo">Artículos y Noticias</h2>
-    <div class="articulos-grid">
-      <div class="articulo">
-        <img src="public/imagenes/patria.jpg" alt="Morir por la patria" class="articulo-img">
-        <p class="articulo-texto">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        </p>
-      </div>
-      <div class="articulo">
-        <img src="public/imagenes/retorno.jpg" alt="No hay retorno" class="articulo-img">
-        <p class="articulo-texto">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        </p>
-      </div>
-      <div class="articulo">
-        <img src="public/imagenes/resurmiento.jpg" alt="Colombia nos une" class="articulo-img">
-        <p class="articulo-texto">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        </p>
-      </div>
-    </div>
+    <div class="articulos-grid"></div>
   </section>
 `;
 
 class ArticulosSection extends HTMLElement {
   constructor() {
     super();
-    this.attachShadow({mode:'open'}).appendChild(template.content.cloneNode(true));
+    this.attachShadow({ mode: 'open' }).appendChild(template.content.cloneNode(true));
+  }
+
+  connectedCallback() {
+    const grid = this.shadowRoot.querySelector('.articulos-grid');
+    grid.innerHTML = '';
+
+    articulos.forEach(articulo => {
+      const div = document.createElement('div');
+      div.classList.add('articulo');
+      div.innerHTML = `
+        <img src="${articulo.imagen}" alt="${articulo.titulo}" class="articulo-img">
+        <p class="articulo-texto">${articulo.texto.slice(0, 100)}...</p>
+      `;
+      div.addEventListener('click', () => {
+  window.location.href = `articulo.html?articulo=${articulo.id}`;
+});
+
+      grid.appendChild(div);
+    });
   }
 }
 
