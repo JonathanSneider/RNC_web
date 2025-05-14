@@ -20,7 +20,7 @@ export const productos = {
     telegram: "https://t.me/StvnKrin"
   },
   otro: {
-    titulo: "CAMISETA OTRO",
+    titulo: "CAMISETA RNC",
     categoria: "CAMISETA",
     descripcion: `
       <p><em>Otra camiseta con estilo único.</em></p>
