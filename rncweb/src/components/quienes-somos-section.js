@@ -116,12 +116,12 @@ template.innerHTML = `
     <div class="section-1">
       <img class="img1 section-animate" src="public/imagenes/1.jpg" alt="Imagen izquierda" data-animation="animate-fadeInLeft" data-delay="100" />
       <p class="texto-qns section-animate" data-animation="animate-fadeInUp" data-delay="200">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit,<br/>
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br/>
-        Ut enim ad minim veniam, quis nostrud exercitation.Lorem ipsum dolor<br/>
-        sit amet, consectetur adipiscing elit,<br/>
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br/>
-        Ut enim ad minim veniam, quis nostrud exercitation.
+        Resurgimiento Nacional es una organización política fundada<br/>
+        sobre los principios inquebrantables de unidad nacional,<br/>
+        soberanía absoluta y preservación de nuestra identidad patria.<br/>
+        sIdenficados por la salvaguarda de la tradición y defensores de<br/>
+        la independencia nacional, comprometidos con el<br/>
+        resurgimiento de una Colombia fuerte, unida y soberana.
       </p>
       <img class="img2 section-animate" src="public/imagenes/2.jpg" alt="Imagen derecha" data-animation="animate-fadeInRight" data-delay="100" />
     </div>
@@ -129,12 +129,12 @@ template.innerHTML = `
     <div class="section-2">
       <img class="img3 section-animate" src="public/imagenes/4.jpg" alt="" data-animation="animate-fadeInLeft" data-delay="100" />
       <p class="texto-qns2 section-animate" data-animation="animate-fadeInUp" data-delay="200">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit,<br/>
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br/>
-        Ut enim ad minim veniam, quis nostrud exercitation.Lorem ipsum dolor<br/>
-        sit amet, consectetur adipiscing elit,<br/>
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br/>
-        Ut enim ad minim veniam, quis nostrud exercitation.
+        No somos simples actores políticos; somos el movimiento de<br/>
+        los patriotas, los que alzan la voz por la grandeza de la Nación <br/>
+        frente a las amenazas de la decadencia. Nuestra causa es<br/>
+        clara: Colombia primero, siempre.<br/>
+        Con disciplina, honor y lealtad, trabajamos para asegurar que las generaciones futuras hereden una patria libre, orgullosa y<br/>
+        dueña de su destino. Colombia no se negocia, se defiende.
       </p>
     </div>
   </section>

@@ -59,15 +59,15 @@ template.innerHTML = `
       <div class="donaciones-medios">
         <div class="donacion-item">
           <img src="public/imagenes/Paypal_2014_logo (1).png" alt="PayPal" class="donacion-icono" />
-          <span>asdasdad@gmail.com</span>
+          <span>ResurgimientonRNC@gmail.com</span>
         </div>
         <div class="donacion-item">
           <img src="public/imagenes/nequi-logo-png_seeklogo-404357.png" alt="Nequi" class="donacion-icono" />
-          <span>231231231231</span>
+          <span>322 2517497</span>
         </div>
       </div>
       <p class="donaciones-texto">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.
+        Tu aporte es completamente voluntario. Si deseas apoyar las actividades y el crecimiento de nuestro movimiento, puedes hacerlo a través de una donación. Cada contribución ayuda a seguir construyendo este proyecto.
       </p>
     </div>
   </section>
