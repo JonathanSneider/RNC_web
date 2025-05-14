@@ -80,7 +80,7 @@ class ArticulosSection extends HTMLElement {
         <p class="articulo-texto">${articulo.texto.slice(0, 100)}...</p>
       `;
       div.addEventListener('click', () => {
-  window.location.href = `articulo.html?articulo=${articulo.id}`;
+  window.location.href = `index.html?articulo=${articulo.id}`;
 });
 
       grid.appendChild(div);

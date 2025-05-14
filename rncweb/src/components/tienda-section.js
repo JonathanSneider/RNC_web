@@ -134,7 +134,7 @@ class TiendaSection extends HTMLElement {
 
     Object.entries(productos).forEach(([id, producto]) => {
       const productoHTML = `
-        <a href="producto.html?id=${id}" class="producto-link">
+        <a href="index.html?producto=${id}" class="producto-link">
           <div class="producto">
             <img src="${producto.imagenes[0]}" alt="${producto.titulo}" loading="lazy" />
             <p class="precio">${producto.precio}</p>

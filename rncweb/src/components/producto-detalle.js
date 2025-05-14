@@ -161,10 +161,10 @@ class ProductoDetalle extends HTMLElement {
   }
 
   connectedCallback() {
-    const params = new URLSearchParams(window.location.search);
-    const id = params.get('id');
-    const data = productos[id];
+    // Obtener el ID desde atributo o desde la URL
+    const id = this.getAttribute('data-id') || new URLSearchParams(window.location.search).get('producto');
 
+    const data = productos[id];
     if (!data) {
       this.shadowRoot.innerHTML = `<p style="padding: 50px; text-align: center;">Producto no encontrado.</p>`;
       return;
@@ -211,3 +211,4 @@ class ProductoDetalle extends HTMLElement {
 }
 
 customElements.define('producto-detalle', ProductoDetalle);
+

@@ -60,3 +60,24 @@ document.addEventListener('DOMContentLoaded', function() {
     // Inicializar animaciones
     animateOnScroll();
   });
+   const params = new URLSearchParams(window.location.search);
+    const productoId = params.get('producto');
+    const articuloId = params.get('articulo');
+
+    const principal = document.getElementById('pagina-principal');
+    const detalleProducto = document.getElementById('detalle-producto');
+    const detalleArticulo = document.getElementById('detalle-articulo');
+
+    if (productoId) {
+      principal.style.display = 'none';
+      detalleProducto.style.display = 'block';
+      document.querySelector('producto-detalle').setAttribute('data-id', productoId);
+    } else if (articuloId) {
+      principal.style.display = 'none';
+      detalleArticulo.style.display = 'block';
+      document.querySelector('articulo-detalle').setAttribute('data-id', articuloId);
+    } else {
+      principal.style.display = 'block';
+      detalleProducto.style.display = 'none';
+      detalleArticulo.style.display = 'none';
+    }

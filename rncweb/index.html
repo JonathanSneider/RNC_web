@@ -1,41 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Resurgimiento nacional</title>
-  <link rel="stylesheet" href="src/index.css">
+  <link rel="stylesheet" href="src/index.css" />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap" rel="stylesheet" />
+
+  <!-- Componentes base -->
   <script type="module" src="src/components/app-navbar.js"></script>
+  <script type="module" src="src/components/app-footer.js"></script>
+
+  <!-- Componentes página principal -->
   <script type="module" src="src/components/main-content.js"></script>
   <script type="module" src="src/components/quienes-somos-section.js"></script>
   <script type="module" src="src/components/ideologia-section.js"></script>
   <script type="module" src="src/components/tienda-section.js"></script>
   <script type="module" src="src/components/articulos-section.js"></script>
   <script type="module" src="src/components/donaciones-section.js"></script>
-  <script type="module" src="src/components/app-footer.js"></script>
+
+  <!-- Componentes detalle -->
+  <script type="module" src="src/components/producto-detalle.js"></script>
+  <script type="module" src="src/components/articulo-detalle.js"></script>
 </head>
 <body>
-  
   <app-navbar></app-navbar>
-  <section id="main-content">
-  <main-content></main-content>
-  </section>
-  <section id="quienes-somos">
-  <quienes-somos-section></quienes-somos-section>
-  </section>
-  <section id="ideologia">
-  <ideologia-section></ideologia-section>
-  </section>
-  <section id="tienda">
-  <tienda-section></tienda-section>
-  </section>
-  <section id="articulos">
-  <articulos-section></articulos-section>
-  </section>
-  <section id="donaciones">
-  <donaciones-section></donaciones-section>
-  </section>
+
+  <!-- Contenedor de página principal -->
+  <div id="pagina-principal">
+    <section id="main-content"><main-content></main-content></section>
+    <section id="quienes-somos"><quienes-somos-section></quienes-somos-section></section>
+    <section id="ideologia"><ideologia-section></ideologia-section></section>
+    <section id="tienda"><tienda-section></tienda-section></section>
+    <section id="articulos"><articulos-section></articulos-section></section>
+    <section id="donaciones"><donaciones-section></donaciones-section></section>
+  </div>
+
+  <!-- Contenedor para detalle de producto -->
+  <div id="detalle-producto" style="display: none;">
+    <producto-detalle></producto-detalle>
+  </div>
+
+  <!-- Contenedor para detalle de artículo -->
+  <div id="detalle-articulo" style="display: none;">
+    <articulo-detalle></articulo-detalle>
+  </div>
+
   <app-footer></app-footer>
+  <script src="src/script.js"></script>
 </body>
 </html>
