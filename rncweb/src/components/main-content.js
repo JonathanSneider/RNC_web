@@ -80,8 +80,8 @@ template.innerHTML = `
     }
   </style>
   <div class="main-content">
-    <img src="public/imagenes/logo.png" alt="Logo central" class="center-logo" />
-    <img src="public/imagenes/estatua.png" alt="Estatua" class="statue" />
+    <img src="/imagenes/logo.png" alt="Logo central" class="center-logo" />
+    <img src="/imagenes/estatua.png" alt="Estatua" class="statue" />
   </div>
 `;
 

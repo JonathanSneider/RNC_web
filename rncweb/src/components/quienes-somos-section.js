@@ -114,7 +114,7 @@ template.innerHTML = `
     <h1 class="tituloqns">¿QUIENES SOMOS?</h1>
 
     <div class="section-1">
-      <img class="img1 section-animate" src="public/imagenes/1.jpg" alt="Imagen izquierda" data-animation="animate-fadeInLeft" data-delay="100" />
+      <img class="img1 section-animate" src="/imagenes/1.jpg" alt="Imagen izquierda" data-animation="animate-fadeInLeft" data-delay="100" />
       <p class="texto-qns section-animate" data-animation="animate-fadeInUp" data-delay="200">
         Resurgimiento Nacional es una organización política fundada<br/>
         sobre los principios inquebrantables de unidad nacional,<br/>
@@ -123,11 +123,11 @@ template.innerHTML = `
         la independencia nacional, comprometidos con el<br/>
         resurgimiento de una Colombia fuerte, unida y soberana.
       </p>
-      <img class="img2 section-animate" src="public/imagenes/2.jpg" alt="Imagen derecha" data-animation="animate-fadeInRight" data-delay="100" />
+      <img class="img2 section-animate" src="/imagenes/2.jpg" alt="Imagen derecha" data-animation="animate-fadeInRight" data-delay="100" />
     </div>
 
     <div class="section-2">
-      <img class="img3 section-animate" src="public/imagenes/4.jpg" alt="" data-animation="animate-fadeInLeft" data-delay="100" />
+      <img class="img3 section-animate" src="/imagenes/4.jpg" alt="" data-animation="animate-fadeInLeft" data-delay="100" />
       <p class="texto-qns2 section-animate" data-animation="animate-fadeInUp" data-delay="200">
         No somos simples actores políticos; somos el movimiento de<br/>
         los patriotas, los que alzan la voz por la grandeza de la Nación <br/>

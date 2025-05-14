@@ -28,7 +28,6 @@ template.innerHTML = `
       justify-content: center;
       max-width: 1000px;
       padding: 0 10px;
-      
     }
 
     .producto-link {
@@ -47,7 +46,6 @@ template.innerHTML = `
       height: 100%;
       display: flex;
       flex-direction: column;
-      
     }
 
     .producto:hover {
@@ -95,23 +93,21 @@ template.innerHTML = `
     @media (max-width: 600px) {
       .productos-grid {
         grid-template-columns: 1fr;
-        justify-items: center; /* Centra los elementos del grid */
-        max-width: 300px; /* Ancho máximo para móvil */
+        justify-items: center;
+        max-width: 300px;
         row-gap: 30px;
       }
-      
+
       .producto {
-        max-width: 250px; /* Ancho fijo para móvil */
-        width: 100%; /* Ocupa todo el espacio disponible */
+        max-width: 250px;
+        width: 100%;
       }
     }
   </style>
 
   <section id="tienda">
     <h2 class="tienda-titulo">TIENDA</h2>
-    <div class="productos-grid" id="productos-container">
-      <!-- Productos se generan aquí -->
-    </div>
+    <div class="productos-grid" id="productos-container"></div>
     <div class="mensaje-tienda">
       Estamos trabajando para traer más diseños y productos!
     </div>
@@ -121,7 +117,7 @@ template.innerHTML = `
 class TiendaSection extends HTMLElement {
   constructor() {
     super();
-    this.attachShadow({mode:'open'}).appendChild(template.content.cloneNode(true));
+    this.attachShadow({ mode: 'open' }).appendChild(template.content.cloneNode(true));
   }
 
   connectedCallback() {
@@ -134,14 +130,24 @@ class TiendaSection extends HTMLElement {
 
     Object.entries(productos).forEach(([id, producto]) => {
       const productoHTML = `
-        <a href="index.html?producto=${id}" class="producto-link">
+        <a href="?producto=${id}" class="producto-link" data-id="${id}">
           <div class="producto">
             <img src="${producto.imagenes[0]}" alt="${producto.titulo}" loading="lazy" />
+            <h3>${producto.titulo}</h3>
             <p class="precio">${producto.precio}</p>
           </div>
         </a>
       `;
       container.insertAdjacentHTML('beforeend', productoHTML);
+    });
+
+    container.querySelectorAll('.producto-link').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const id = link.getAttribute('data-id');
+        // Usa la función global que definimos en main.js
+        window.mostrarDetalleProducto(id);
+      });
     });
   }
 }

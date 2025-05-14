@@ -58,11 +58,11 @@ template.innerHTML = `
     <div class="donaciones-contenido">
       <div class="donaciones-medios">
         <div class="donacion-item">
-          <img src="public/imagenes/Paypal_2014_logo (1).png" alt="PayPal" class="donacion-icono" />
+          <img src="/imagenes/Paypal_2014_logo (1).png" alt="PayPal" class="donacion-icono" />
           <span>ResurgimientonRNC@gmail.com</span>
         </div>
         <div class="donacion-item">
-          <img src="public/imagenes/nequi-logo-png_seeklogo-404357.png" alt="Nequi" class="donacion-icono" />
+          <img src="/imagenes/nequi-logo-png_seeklogo-404357.png" alt="Nequi" class="donacion-icono" />
           <span>322 2517497</span>
         </div>
       </div>

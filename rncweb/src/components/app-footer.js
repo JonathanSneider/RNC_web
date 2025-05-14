@@ -55,7 +55,7 @@ template.innerHTML = `
   <footer class="footer">
     <div class="footer-content">
       <div class="footer-logo">
-        <img src="public/imagenes/logo.png" alt="Logo Footer">
+        <img src="/imagenes/logo.png" alt="Logo Footer">
       </div>
       <div class="footer-section">
         <h4>Redes:</h4>

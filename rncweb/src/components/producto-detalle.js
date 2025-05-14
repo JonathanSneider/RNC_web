@@ -160,10 +160,17 @@ class ProductoDetalle extends HTMLElement {
     this.shadowRoot.appendChild(templateProducto.content.cloneNode(true));
   }
 
-  connectedCallback() {
-    // Obtener el ID desde atributo o desde la URL
-    const id = this.getAttribute('data-id') || new URLSearchParams(window.location.search).get('producto');
+  static get observedAttributes() {
+    return ['data-id'];
+  }
 
+  attributeChangedCallback(name, oldValue, newValue) {
+    if (name === 'data-id' && newValue) {
+      this.renderProducto(newValue);
+    }
+  }
+
+  renderProducto(id) {
     const data = productos[id];
     if (!data) {
       this.shadowRoot.innerHTML = `<p style="padding: 50px; text-align: center;">Producto no encontrado.</p>`;
@@ -187,15 +194,15 @@ class ProductoDetalle extends HTMLElement {
 
     updateMainImage(currentIndex);
 
-    root.querySelector('.arrow.left').addEventListener('click', () => {
+    root.querySelector('.arrow.left').onclick = () => {
       currentIndex = (currentIndex - 1 + data.imagenes.length) % data.imagenes.length;
       updateMainImage(currentIndex);
-    });
+    };
 
-    root.querySelector('.arrow.right').addEventListener('click', () => {
+    root.querySelector('.arrow.right').onclick = () => {
       currentIndex = (currentIndex + 1) % data.imagenes.length;
       updateMainImage(currentIndex);
-    });
+    };
 
     thumbnails.innerHTML = '';
     data.imagenes.forEach((src, index) => {
@@ -211,4 +218,3 @@ class ProductoDetalle extends HTMLElement {
 }
 
 customElements.define('producto-detalle', ProductoDetalle);
-

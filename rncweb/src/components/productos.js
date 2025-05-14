@@ -13,9 +13,9 @@ export const productos = {
     `,
     precio: "60.000$",
     imagenes: [
-      "public/imagenes/Camisetas/camiseta1.1.png",
-      "public/imagenes/Camisetas/camiseta1.2.png",
-      "public/imagenes/Camisetas/camiseta1.3.png"
+      "/imagenes/Camisetas/camiseta1.1.png",
+      "/imagenes/Camisetas/camiseta1.2.png",
+      "/imagenes/Camisetas/camiseta1.3.png"
     ],
     telegram: "https://t.me/StvnKrin"
   },
@@ -27,9 +27,9 @@ export const productos = {
     `,
     precio: "55.000$",
     imagenes: [
-      "public/imagenes/Camisetas/camiseta2.3.jpg",
-      "public/imagenes/Camisetas/camiseta2.2.jpg",
-      "public/imagenes/Camisetas/camiseta2.1.jpg"
+      "/imagenes/Camisetas/camiseta2.3.jpg",
+      "/imagenes/Camisetas/camiseta2.2.jpg",
+      "/imagenes/Camisetas/camiseta2.1.jpg"
     ],
     telegram: "https://t.me/StvnKrin"
   },
@@ -46,9 +46,9 @@ export const productos = {
     `,
     precio: "88.000$",
     imagenes: [
-      "public/imagenes/Camisetas/camiseta3.1.png",
-      "public/imagenes/Camisetas/camiseta3.2.png",
-      "public/imagenes/Camisetas/camiseta3.3.png"
+      "/imagenes/Camisetas/camiseta3.1.png",
+      "/imagenes/Camisetas/camiseta3.2.png",
+      "/imagenes/Camisetas/camiseta3.3.png"
     ],
     telegram: "https://t.me/StvnKrin"
   },rnc3: {
@@ -64,9 +64,9 @@ export const productos = {
     `,
     precio: "40.000$",
     imagenes: [
-      "public/imagenes/Camisetas/camiseta4.1.png",
-      "public/imagenes/Camisetas/camiseta4.2.png",
-      "public/imagenes/Camisetas/camiseta4.3.png"
+      "/imagenes/Camisetas/camiseta4.1.png",
+      "/imagenes/Camisetas/camiseta4.2.png",
+      "/imagenes/Camisetas/camiseta4.3.png"
     ],
     telegram: "https://t.me/StvnKrin"
   },rnc4: {
@@ -82,9 +82,9 @@ export const productos = {
     `,
     precio: "70.000$",
     imagenes: [
-      "public/imagenes/Camisetas/camiseta5.1.png",
-      "public/imagenes/Camisetas/camiseta5.2.png",
-      "public/imagenes/Camisetas/camiseta5.3.png"
+      "/imagenes/Camisetas/camiseta5.1.png",
+      "/imagenes/Camisetas/camiseta5.2.png",
+      "/imagenes/Camisetas/camiseta5.3.png"
     ],
     telegram: "https://t.me/StvnKrin"
   },rnc5: {
@@ -100,9 +100,9 @@ export const productos = {
     `,
     precio: "50.000$",
     imagenes: [
-      "public/imagenes/Camisetas/camiseta6.1.png",
-      "public/imagenes/Camisetas/camiseta6.2.png",
-      "public/imagenes/Camisetas/camiseta6.3.png"
+      "/imagenes/Camisetas/camiseta6.1.png",
+      "/imagenes/Camisetas/camiseta6.2.png",
+      "/imagenes/Camisetas/camiseta6.3.png"
     ],
     telegram: "https://t.me/StvnKrin"
   },

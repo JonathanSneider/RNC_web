@@ -142,7 +142,7 @@ template.innerHTML = `
   <header id="main-content">
     <nav class="navbar">
       <div class="logo-container">
-        <img src="public/imagenes/logo0.png" alt="Logo menú" class="menu-icon">
+        <img src="/imagenes/logo0.png" alt="Logo menú" class="menu-icon">
       </div>
       <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links" >
         <span></span>
