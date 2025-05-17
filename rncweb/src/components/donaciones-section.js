@@ -63,7 +63,7 @@ template.innerHTML = `
         </div>
         <div class="donacion-item">
           <img src="/imagenes/nequi-logo-png_seeklogo-404357.png" alt="Nequi" class="donacion-icono" />
-          <span>322 2517497</span>
+          <span>300 0000000</span>
         </div>
       </div>
       <p class="donaciones-texto">
